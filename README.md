@@ -6,7 +6,7 @@ A Cisco Packet Tracer-based enterprise network designed and implemented to simul
 
 The topology includes an Internet/Cloud connection, ISP router, edge router, Layer-3 core switch, two access switches, two servers, and end-user PCs.
 
-![Enterprise Corporate Office Network Architecture](topology/enterprise-network-architecture.png)
+![Enterprise Corporate Office Network Architecture](enterprise-network-topology.png)
 
 ## Project Objectives
 
