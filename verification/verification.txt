@@ -1,0 +1,73 @@
+# Verification
+
+This project includes verification evidence captured from Cisco Packet Tracer.
+
+## LACP EtherChannel — Core
+
+Command:
+
+```text
+show etherchannel summary
+```
+
+Observed result:
+
+```text
+Group  Port-channel  Protocol  Ports
+1      Po1(SU)       LACP      Fa0/2(P) Fa0/6(P)
+2      Po2(SU)       LACP      Fa0/3(P) Fa0/7(P)
+```
+
+`LACP` confirms LACP negotiation, `SU` shows the Layer-2 port-channel is in use, and `(P)` shows the physical interfaces are successfully bundled.
+
+## Dynamic ARP Inspection — SW1
+
+Command:
+
+```text
+show ip arp inspection
+```
+
+Observed result:
+
+- VLAN 10: Enabled / Active
+- VLAN 20: Enabled / Active
+- VLAN 30: Enabled / Active
+
+## Port Security — SW1
+
+Command:
+
+```text
+show port-security
+```
+
+Observed result:
+
+| Interface | Max Secure Addresses | Current Addresses | Violations | Action |
+|---|---:|---:|---:|---|
+| Fa0/2 | 1 | 1 | 0 | Restrict |
+| Fa0/3 | 1 | 1 | 0 | Restrict |
+| Fa0/4 | 1 | 1 | 0 | Restrict |
+| Fa0/5 | 1 | 1 | 0 | Restrict |
+| Fa0/6 | 1 | 1 | 0 | Restrict |
+| Fa0/7 | 1 | 1 | 0 | Restrict |
+
+## Useful Verification Commands
+
+```text
+show vlan brief
+show interfaces trunk
+show etherchannel summary
+show ip interface brief
+show ip route
+show running-config
+show ip dhcp binding
+show ip arp inspection
+show port-security
+```
+
+## Notes
+
+- DHCP Snooping was not enabled globally on SW1/SW2; only the access-port rate-limit command is present in the supplied configurations.
+- PC13 is used only for Port Security testing and is not treated as a normal production client in the topology documentation.
