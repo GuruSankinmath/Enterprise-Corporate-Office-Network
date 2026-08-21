@@ -16,7 +16,7 @@ show interfaces fa0/6
 show interfaces fa0/3
 show interfaces fa0/7
 
-result:
+result :
 Group  Port-channel  Protocol  Ports
 1      Po1(SU)       LACP      Fa0/2(P) Fa0/6(P)
 2      Po2(SU)       LACP      Fa0/3(P) Fa0/7(P)
