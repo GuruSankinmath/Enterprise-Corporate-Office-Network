@@ -1,0 +1,29 @@
+# IP Addressing Plan
+
+## VLAN Networks
+
+| VLAN | Purpose | Network | Gateway |
+|---:|---|---|---|
+| 10 | HR | 192.168.10.0/24 | 192.168.10.1 |
+| 20 | Finance | 192.168.20.0/24 | 192.168.20.1 |
+| 30 | IT | 192.168.30.0/24 | 192.168.30.1 |
+| 40 | Sales | 192.168.40.0/24 | 192.168.40.1 |
+| 50 | Guest | 192.168.50.0/24 | 192.168.50.1 |
+| 60 | Management | 192.168.60.0/24 | 192.168.60.1 |
+| 70 | Server / Management services | 192.168.70.0/24 | 192.168.70.1 |
+| 99 | Native / Management | 192.168.99.0/24 | 192.168.99.1 |
+
+## Device Management / Transit Addresses
+
+| Device / Interface | IP Address | Purpose |
+|---|---|---|
+| Core Fa0/1 | 10.0.0.1/30 | Routed link to Edge Router |
+| Edge Gi0/1 | 10.0.0.2/30 | Routed link to Core |
+| Edge Gi0/0 | 203.0.113.1/30 | Outside / ISP-facing |
+| ISP Gi0/1 | 203.0.113.2/30 | ISP-side address |
+| Core VLAN 70 | 192.168.70.1/24 | Management/services gateway |
+| SW1 VLAN 70 | 192.168.70.2/24 | Switch management |
+| SW2 VLAN 70 | 192.168.70.3/24 | Switch management |
+| DHCP Server | 192.168.70.10/24 | DHCP / NTP service |
+
+PC addressing is delivered dynamically through the DHCP server according to the configured pools.
