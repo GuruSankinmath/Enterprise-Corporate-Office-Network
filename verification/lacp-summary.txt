@@ -1,0 +1,22 @@
+show etherchannel summary
+
+show etherchannel 1 summary
+
+show etherchannel 2 summary
+
+show lacp neighbor
+
+show interfaces port-channel 1
+
+show interfaces port-channel 2
+
+show interfaces fa0/2
+show interfaces fa0/6
+
+show interfaces fa0/3
+show interfaces fa0/7
+
+result:
+Group  Port-channel  Protocol  Ports
+1      Po1(SU)       LACP      Fa0/2(P) Fa0/6(P)
+2      Po2(SU)       LACP      Fa0/3(P) Fa0/7(P)
