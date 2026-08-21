@@ -163,10 +163,10 @@ enterprise-corporate-office-network/
 ├── addressing/
 │   └── ip-addressing-table.md
 └── verification/
-    ├── verification.md
-    ├── lacp-summary.txt
     ├── dai-summary.txt
-    └── port-security-summary.txt
+    ├── lacp-summary.txt
+    ├── port-security-summary.txt
+    └── verification.txt
 ```
 
 ## Project Outcome
