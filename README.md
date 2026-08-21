@@ -164,9 +164,9 @@ enterprise-corporate-office-network/
 │   └── ip-addressing-table.md
 └── verification/
     ├── verification.md
-    ├── lacp-summary.png
-    ├── dai-summary.png
-    └── port-security-summary.png
+    ├── lacp-summary.txt
+    ├── dai-summary.txt
+    └── port-security-summary.txt
 ```
 
 ## Project Outcome
