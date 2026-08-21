@@ -1,0 +1,12 @@
+show port-security
+
+Result :
+Secure Port MaxSecureAddr CurrentAddr SecurityViolation Security
+               (Count)      (Count)       (Count)       Action
+----------------------------------------------------------------
+Fa0/2              1            1              0          Restrict
+Fa0/3              1            1              0          Restrict
+Fa0/4              1            1              0          Restrict
+Fa0/5              1            1              0          Restrict
+Fa0/6              1            1              0          Restrict
+Fa0/7              1            1              0          Restrict
