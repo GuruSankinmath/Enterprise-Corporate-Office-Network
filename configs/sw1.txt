@@ -1,1 +1,128 @@
+enable
+configure terminal
+
+hostname sw1
+
+clock timezone UTC 0
+
+ip arp inspection vlan 10,20,30
+
+spanning-tree mode pvst
+spanning-tree extend system-id
+
+interface Port-channel1
+ switchport mode trunk
+exit
+
+interface FastEthernet0/1
+ switchport mode trunk
+ channel-group 1 mode active
+exit
+
+interface FastEthernet0/2
+ switchport access vlan 10
+ ip arp inspection trust
+ ip dhcp snooping limit rate 10
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky 0090.21A0.0ABB
+exit
+
+interface FastEthernet0/3
+ switchport access vlan 10
+ ip arp inspection trust
+ ip dhcp snooping limit rate 10
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky 000C.85A9.9E1C
+exit
+
+interface FastEthernet0/4
+ switchport access vlan 20
+ ip arp inspection trust
+ ip dhcp snooping limit rate 10
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky 0002.4A86.5D4A
+exit
+
+interface FastEthernet0/5
+ switchport access vlan 20
+ ip arp inspection trust
+ ip dhcp snooping limit rate 10
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky 0001.43D7.6DBD
+exit
+
+interface FastEthernet0/6
+ switchport access vlan 30
+ ip arp inspection trust
+ ip dhcp snooping limit rate 10
+ switchport mode access
+ switchport port-security
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky 0001.96B8.D81E
+exit
+
+interface FastEthernet0/7
+ switchport access vlan 30
+ ip arp inspection trust
+ ip dhcp snooping limit rate 10
+ switchport mode access
+ switchport port-security
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky 0040.0BBB.CBCC
+exit
+
+interface FastEthernet0/8
+ switchport mode trunk
+ channel-group 1 mode active
+exit
+
+interface FastEthernet0/9
+ switchport access vlan 10
+ switchport mode access
+exit
+
+interface GigabitEthernet0/1
+exit
+
+interface GigabitEthernet0/2
+exit
+
+interface Vlan1
+ no ip address
+ shutdown
+exit
+
+interface Vlan70
+ ip address 192.168.70.2 255.255.255.0
+exit
+
+ip default-gateway 192.168.70.1
+
+ntp server 192.168.70.10
+
+line con 0
+exit
+
+line vty 0 4
+ login
+exit
+
+line vty 5 15
+ login
+exit
+
+end
+write memory
 
